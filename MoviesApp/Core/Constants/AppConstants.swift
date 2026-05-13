@@ -2,6 +2,7 @@
 //  AppConstants.swift
 //  MoviesApp
 //
+//  Shared constants: API base URL, timeouts, and `UserDefaults` keys.
 
 import Foundation
 

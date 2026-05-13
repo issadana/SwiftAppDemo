@@ -2,6 +2,7 @@
 //  CatalogRoute.swift
 //  MoviesApp
 //
+//  Film catalog navigation destinations (e.g. film detail) for stack paths.
 
 import Foundation
 

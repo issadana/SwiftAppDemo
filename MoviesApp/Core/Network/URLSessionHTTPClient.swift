@@ -2,6 +2,7 @@
 //  URLSessionHTTPClient.swift
 //  MoviesApp
 //
+//  Production `HTTPClient` using `URLSession`, status-code mapping, and logging.
 
 import Foundation
 

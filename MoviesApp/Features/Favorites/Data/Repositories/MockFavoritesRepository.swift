@@ -2,6 +2,7 @@
 //  MockFavoritesRepository.swift
 //  MoviesApp
 //
+//  In-memory favorites store for previews and tests.
 
 import Foundation
 

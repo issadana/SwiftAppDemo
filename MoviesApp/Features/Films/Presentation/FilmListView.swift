@@ -2,6 +2,7 @@
 //  FilmListView.swift
 //  MoviesApp
 //
+//  Reusable SwiftUI list of `Film` rows with navigation.
 
 import SwiftUI
 

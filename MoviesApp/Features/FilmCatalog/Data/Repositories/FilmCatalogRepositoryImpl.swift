@@ -2,6 +2,7 @@
 //  FilmCatalogRepositoryImpl.swift
 //  MoviesApp
 //
+//  `FilmCatalogRepository` backed by `FilmCatalogRemoteDataSource` and DTO mapping.
 
 import Foundation
 

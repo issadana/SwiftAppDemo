@@ -2,6 +2,7 @@
 //  FilmDTO.swift
 //  MoviesApp
 //
+//  Decodable film payload from the Ghibli HTTP API.
 
 import Foundation
 

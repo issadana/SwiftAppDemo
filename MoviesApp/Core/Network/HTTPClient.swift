@@ -2,6 +2,7 @@
 //  HTTPClient.swift
 //  MoviesApp
 //
+//  Abstraction for async JSON GET + decode (testable vs `URLSession`).
 
 import Foundation
 

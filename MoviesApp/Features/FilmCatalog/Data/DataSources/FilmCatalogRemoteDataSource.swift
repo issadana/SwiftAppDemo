@@ -2,6 +2,7 @@
 //  FilmCatalogRemoteDataSource.swift
 //  MoviesApp
 //
+//  Low-level fetches: all films, one film, search, and person by URL.
 
 import Foundation
 

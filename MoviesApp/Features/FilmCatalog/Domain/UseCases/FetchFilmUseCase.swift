@@ -2,6 +2,7 @@
 //  FetchFilmUseCase.swift
 //  MoviesApp
 //
+//  Loads a single film by id.
 
 import Foundation
 

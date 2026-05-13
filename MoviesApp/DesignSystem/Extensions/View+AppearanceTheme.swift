@@ -2,6 +2,7 @@
 //  View+AppearanceTheme.swift
 //  MoviesApp
 //
+//  View extension applying `preferredColorScheme` from saved `AppearanceTheme`.
 
 import SwiftUI
 

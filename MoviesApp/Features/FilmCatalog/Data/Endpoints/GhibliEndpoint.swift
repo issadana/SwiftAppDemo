@@ -2,6 +2,7 @@
 //  GhibliEndpoint.swift
 //  MoviesApp
 //
+//  Concrete `APIEndpoint` values for films and people requests.
 
 import Foundation
 

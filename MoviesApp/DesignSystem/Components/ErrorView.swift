@@ -2,6 +2,7 @@
 //  ErrorView.swift
 //  MoviesApp
 //
+//  Full-area error presentation with optional retry.
 
 import SwiftUI
 

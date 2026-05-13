@@ -2,6 +2,7 @@
 //  FavoritesFeatureFactory.swift
 //  MoviesApp
 //
+//  Builds `FavoritesViewModel` with catalog and favorites dependencies.
 
 import Foundation
 

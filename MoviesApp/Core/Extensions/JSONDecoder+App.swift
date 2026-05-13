@@ -2,6 +2,7 @@
 //  JSONDecoder+App.swift
 //  MoviesApp
 //
+//  Shared `JSONDecoder` with ISO-8601 dates and default key strategy for API DTOs.
 
 import Foundation
 

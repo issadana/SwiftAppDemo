@@ -2,6 +2,7 @@
 //  SearchScreen.swift
 //  MoviesApp
 //
+//  Search tab with debounced query and results.
 
 import SwiftUI
 

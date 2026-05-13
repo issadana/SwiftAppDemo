@@ -2,6 +2,7 @@
 //  FetchFavoriteFilmsUseCase.swift
 //  MoviesApp
 //
+//  Resolves favorite films from a set of ids.
 
 import Foundation
 

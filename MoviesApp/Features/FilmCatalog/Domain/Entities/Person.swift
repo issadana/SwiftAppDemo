@@ -2,6 +2,7 @@
 //  Person.swift
 //  MoviesApp
 //
+//  Domain person model (e.g. director) resolved from API URLs.
 
 import Foundation
 

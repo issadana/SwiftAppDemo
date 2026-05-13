@@ -2,6 +2,7 @@
 //  MockFilmCatalogRepository.swift
 //  MoviesApp
 //
+//  In-memory/async mock catalog for previews, tests, and offline demos.
 
 import Foundation
 

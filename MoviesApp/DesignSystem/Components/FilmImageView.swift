@@ -2,6 +2,7 @@
 //  FilmImageView.swift
 //  MoviesApp
 //
+//  Async poster/banner image from API URL or preview asset URL.
 
 import SwiftUI
 

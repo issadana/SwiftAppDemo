@@ -2,6 +2,7 @@
 //  RootCoordinator.swift
 //  MoviesApp
 //
+//  Main shell: `TabView`, lazy tab view models, and per-tab `NavigationStack` paths.
 
 import SwiftUI
 

@@ -2,6 +2,7 @@
 //  UserDefaultsFavoritesRepository.swift
 //  MoviesApp
 //
+//  `FavoritesRepository` storing favorite ids in `UserDefaults`.
 
 import Foundation
 

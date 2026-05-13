@@ -2,6 +2,7 @@
 //  FavoritesViewModel.swift
 //  MoviesApp
 //
+//  Favorite ids, film list refresh, and toggle logic.
 
 import Foundation
 import Observation

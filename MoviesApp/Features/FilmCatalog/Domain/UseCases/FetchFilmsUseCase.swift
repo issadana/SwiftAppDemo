@@ -2,6 +2,7 @@
 //  FetchFilmsUseCase.swift
 //  MoviesApp
 //
+//  Loads the full film list from the repository.
 
 import Foundation
 

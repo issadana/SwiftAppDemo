@@ -2,6 +2,7 @@
 //  FavoritesRepository.swift
 //  MoviesApp
 //
+//  Persistence contract for favorite film ids.
 
 import Foundation
 

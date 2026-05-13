@@ -2,6 +2,7 @@
 //  Logger.swift
 //  MoviesApp
 //
+//  Lightweight logging with levels and a `ConsoleLogger` backend.
 
 import Foundation
 

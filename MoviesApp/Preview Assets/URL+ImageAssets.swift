@@ -2,6 +2,7 @@
 //  URL+ImageAssets.swift
 //  MoviesApp
 //
+//  Preview-only `URL` helpers pointing at asset image names.
 
 import UIKit
 

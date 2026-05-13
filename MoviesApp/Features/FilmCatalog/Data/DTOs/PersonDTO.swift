@@ -2,6 +2,7 @@
 //  PersonDTO.swift
 //  MoviesApp
 //
+//  Decodable person payload from the Ghibli HTTP API.
 
 import Foundation
 

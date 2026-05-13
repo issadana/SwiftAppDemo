@@ -2,6 +2,7 @@
 //  FilmCatalogFeatureFactory.swift
 //  MoviesApp
 //
+//  Builds catalog-related view models from a `FilmCatalogRepository`.
 
 import Foundation
 

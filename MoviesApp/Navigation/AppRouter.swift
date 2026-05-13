@@ -2,6 +2,7 @@
 //  AppRouter.swift
 //  MoviesApp
 //
+//  Observable app navigation: selected tab and `NavigationStack` paths per tab.
 
 import Foundation
 import Observation

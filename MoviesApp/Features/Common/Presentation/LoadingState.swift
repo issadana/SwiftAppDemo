@@ -2,6 +2,7 @@
 //  LoadingState.swift
 //  MoviesApp
 //
+//  Generic loadable UI state (idle, loading, success, failure).
 
 import Foundation
 

@@ -2,6 +2,7 @@
 //  FetchPeopleForFilmUseCase.swift
 //  MoviesApp
 //
+//  Loads people linked to a film (director, etc.).
 
 import Foundation
 

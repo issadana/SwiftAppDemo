@@ -2,6 +2,7 @@
 //  AppError.swift
 //  MoviesApp
 //
+//  User-facing error type and `NetworkError` for HTTP/decoding failures.
 
 import Foundation
 

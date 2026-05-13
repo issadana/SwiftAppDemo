@@ -2,6 +2,7 @@
 //  FilmCatalogRepository.swift
 //  MoviesApp
 //
+//  Domain boundary for reading films and related people from the catalog.
 
 import Foundation
 

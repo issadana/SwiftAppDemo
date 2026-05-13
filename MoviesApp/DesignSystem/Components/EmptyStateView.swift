@@ -2,6 +2,7 @@
 //  EmptyStateView.swift
 //  MoviesApp
 //
+//  Centered empty-state illustration with title and optional subtitle.
 
 import SwiftUI
 

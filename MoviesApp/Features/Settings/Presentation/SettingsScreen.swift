@@ -2,6 +2,7 @@
 //  SettingsScreen.swift
 //  MoviesApp
 //
+//  Settings including appearance theme.
 
 import SwiftUI
 

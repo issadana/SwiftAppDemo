@@ -2,11 +2,10 @@
 //  AppSpacing.swift
 //  MoviesApp
 //
+//  Design-system spacing scale for padding and layout.
 
-// Layout constants use `CGFloat` for SwiftUI `.padding`, `spacing`, and frames.
 import CoreGraphics
 
-// Canonical spacing scale so screens stay visually consistent.
 enum AppSpacing {
     static let xs: CGFloat = 4
     static let sm: CGFloat = 8

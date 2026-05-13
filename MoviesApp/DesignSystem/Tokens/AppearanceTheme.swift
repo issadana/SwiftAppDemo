@@ -2,6 +2,7 @@
 //  AppearanceTheme.swift
 //  MoviesApp
 //
+//  Light/dark/system appearance choice persisted for the UI.
 
 import SwiftUI
 

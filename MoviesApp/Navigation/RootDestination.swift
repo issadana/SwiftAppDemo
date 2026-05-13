@@ -2,6 +2,7 @@
 //  RootDestination.swift
 //  MoviesApp
 //
+//  Coarse app flow stage (extend for splash, auth, etc.).
 
 import Foundation
 

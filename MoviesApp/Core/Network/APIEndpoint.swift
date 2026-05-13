@@ -2,6 +2,7 @@
 //  APIEndpoint.swift
 //  MoviesApp
 //
+//  `Sendable` protocol for types that expose a request URL string.
 
 import Foundation
 

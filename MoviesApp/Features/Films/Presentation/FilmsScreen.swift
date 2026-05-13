@@ -2,6 +2,7 @@
 //  FilmsScreen.swift
 //  MoviesApp
 //
+//  Films tab: list, loading, and errors.
 
 import SwiftUI
 

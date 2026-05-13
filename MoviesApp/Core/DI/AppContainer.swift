@@ -2,6 +2,7 @@
 //  AppContainer.swift
 //  MoviesApp
 //
+//  Composition root: wires film catalog and favorites feature factories for the live app and previews.
 
 import Foundation
 import Observation
@@ -12,8 +13,6 @@ final class AppContainer {
 
     private let filmCatalog: FilmCatalogFeatureFactory
     private let favorites: FavoritesFeatureFactory
-    
-    private(set) var networkMonitor: NetworkMonitor
 
     init(
         filmCatalogRepository: FilmCatalogRepository = FilmCatalogRepositoryImpl(httpClient: URLSessionHTTPClient()),
@@ -24,7 +23,6 @@ final class AppContainer {
             favoritesRepository: favoritesRepository,
             filmCatalogRepository: filmCatalogRepository
         )
-        self.networkMonitor = NetworkMonitor()
     }
 
     func makeFilmsViewModel() -> FilmsViewModel {

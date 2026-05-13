@@ -2,6 +2,7 @@
 //  SearchFilmsUseCase.swift
 //  MoviesApp
 //
+//  Client-side search over the film catalog.
 
 import Foundation
 

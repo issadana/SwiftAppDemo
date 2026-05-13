@@ -2,6 +2,7 @@
 //  SearchFilmsViewModel.swift
 //  MoviesApp
 //
+//  Debounced search over `SearchFilmsUseCase`.
 
 import Foundation
 import Observation

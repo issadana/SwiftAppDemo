@@ -2,6 +2,7 @@
 //  FavoritesScreen.swift
 //  MoviesApp
 //
+//  Favorites tab: list of favorite films.
 
 import SwiftUI
 

@@ -2,6 +2,7 @@
 //  FavoriteButton.swift
 //  MoviesApp
 //
+//  Heart toggle wired to `FavoritesViewModel`.
 
 import SwiftUI
 

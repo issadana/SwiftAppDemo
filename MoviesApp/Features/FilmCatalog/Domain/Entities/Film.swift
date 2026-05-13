@@ -2,6 +2,7 @@
 //  Film.swift
 //  MoviesApp
 //
+//  Domain film model used by UI and use cases.
 
 import Foundation
 

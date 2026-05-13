@@ -2,6 +2,7 @@
 //  FilmDetailScreen.swift
 //  MoviesApp
 //
+//  Film detail UI, people section, and favorite affordances.
 
 import SwiftUI
 

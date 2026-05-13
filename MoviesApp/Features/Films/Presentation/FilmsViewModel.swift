@@ -2,6 +2,7 @@
 //  FilmsViewModel.swift
 //  MoviesApp
 //
+//  State and loading for the films list screen.
 
 import Foundation
 import Observation

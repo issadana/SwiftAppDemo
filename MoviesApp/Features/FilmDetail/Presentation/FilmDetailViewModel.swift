@@ -2,6 +2,7 @@
 //  FilmDetailViewModel.swift
 //  MoviesApp
 //
+//  Loads people for a film and exposes detail UI state.
 
 import Foundation
 import Observation
