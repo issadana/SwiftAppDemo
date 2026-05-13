@@ -18,26 +18,46 @@ final class SearchFilmsViewModel {
 
     init(searchFilmsUseCase: SearchFilmsUseCaseProtocol) {
         self.searchFilmsUseCase = searchFilmsUseCase
+        Logger.debug("SearchFilmsViewModel initialized", category: "SearchFilmsViewModel")
     }
 
     // Clears to idle when the query is empty; otherwise loads after a short delay for debouncing.
     func onSearchTextChange() async {
+        Logger.debug("Search text changed to: '\(searchText)'", category: "SearchFilmsViewModel")
+        
         guard !searchText.isEmpty else {
+            Logger.debug("Search text is empty, resetting to idle", category: "SearchFilmsViewModel")
             state = .idle
             return
         }
 
         state = .loading
+        Logger.info("Starting search for: '\(searchText)'", category: "SearchFilmsViewModel")
 
         let term = searchText
+        Logger.debug("Debouncing search request for 500ms", category: "SearchFilmsViewModel")
         try? await Task.sleep(for: .milliseconds(500))
-        guard !Task.isCancelled, searchText == term else { return }
+        
+        guard !Task.isCancelled, searchText == term else {
+            Logger.debug("Search task was cancelled or search term changed", category: "SearchFilmsViewModel")
+            return
+        }
 
         do {
+            Logger.debug("Executing search for: '\(term)'", category: "SearchFilmsViewModel")
             let films = try await searchFilmsUseCase.execute(searchTerm: term)
             state = .success(films)
+            Logger.info(
+                "Search completed: found \(films.count) films for '\(term)'",
+                category: "SearchFilmsViewModel"
+            )
         } catch {
-            state = .failure(ErrorMapper.map(error))
+            let appError = ErrorMapper.map(error)
+            state = .failure(appError)
+            Logger.error(
+                "Search failed for '\(term)': \(error.localizedDescription)",
+                category: "SearchFilmsViewModel"
+            )
         }
     }
 }

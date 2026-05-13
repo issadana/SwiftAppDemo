@@ -18,26 +18,45 @@ final class FilmsViewModel {
 
     init(fetchFilmsUseCase: FetchFilmsUseCaseProtocol) {
         self.fetchFilmsUseCase = fetchFilmsUseCase
+        Logger.debug("FilmsViewModel initialized", category: "FilmsViewModel")
     }
 
     // Called from `.task` on first appearance; avoids duplicate full catalog fetches.
     func onAppear() async {
-        guard case .idle = state else { return }
+        Logger.debug("FilmsViewModel.onAppear() called", category: "FilmsViewModel")
+        guard case .idle = state else {
+            Logger.debug("State is not idle, skipping fetch", category: "FilmsViewModel")
+            return
+        }
         await fetch()
     }
 
     // Loads or reloads films; previous in-flight work is cancelled first.
     func fetch() async {
+        Logger.info("Fetching films catalog", category: "FilmsViewModel")
         fetchTask?.cancel()
         fetchTask = Task {
             state = .loading
+            Logger.debug("State changed to loading", category: "FilmsViewModel")
             do {
                 let films = try await fetchFilmsUseCase.execute()
-                guard !Task.isCancelled else { return }
+                guard !Task.isCancelled else {
+                    Logger.debug("Fetch task was cancelled", category: "FilmsViewModel")
+                    return
+                }
                 state = .success(films)
+                Logger.info(
+                    "Successfully loaded \(films.count) films",
+                    category: "FilmsViewModel"
+                )
             } catch {
                 guard !Task.isCancelled else { return }
-                state = .failure(ErrorMapper.map(error))
+                let appError = ErrorMapper.map(error)
+                state = .failure(appError)
+                Logger.error(
+                    "Failed to fetch films: \(error.localizedDescription)",
+                    category: "FilmsViewModel"
+                )
             }
         }
         await fetchTask?.value
@@ -45,11 +64,13 @@ final class FilmsViewModel {
 
     // Stops network work when navigating away so late responses cannot flip state.
     func cancelFetch() {
+        Logger.debug("Cancelling fetch task", category: "FilmsViewModel")
         fetchTask?.cancel()
     }
 
     @MainActor
     static var mock: FilmsViewModel {
+        Logger.debug("Creating mock FilmsViewModel", category: "FilmsViewModel")
         let vm = FilmsViewModel(fetchFilmsUseCase: FetchFilmsUseCase(repository: MockFilmCatalogRepository()))
         vm.state = .success([Film.example, Film.exampleFavorite])
         return vm

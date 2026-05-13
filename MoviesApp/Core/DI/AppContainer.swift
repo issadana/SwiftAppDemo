@@ -12,6 +12,8 @@ final class AppContainer {
 
     private let filmCatalog: FilmCatalogFeatureFactory
     private let favorites: FavoritesFeatureFactory
+    
+    private(set) var networkMonitor: NetworkMonitor
 
     init(
         filmCatalogRepository: FilmCatalogRepository = FilmCatalogRepositoryImpl(httpClient: URLSessionHTTPClient()),
@@ -22,6 +24,7 @@ final class AppContainer {
             favoritesRepository: favoritesRepository,
             filmCatalogRepository: filmCatalogRepository
         )
+        self.networkMonitor = NetworkMonitor()
     }
 
     func makeFilmsViewModel() -> FilmsViewModel {
