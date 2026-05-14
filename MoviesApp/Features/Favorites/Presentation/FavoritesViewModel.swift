@@ -8,6 +8,7 @@ import Foundation
 import Observation
 
 // Drives favorites list, persistence, and heart-button state via `@Environment` injection.
+// `@Observable` / `@MainActor` — Same pattern as other ViewModels: UI binds to observable fields on the main actor.
 @Observable
 @MainActor
 final class FavoritesViewModel {

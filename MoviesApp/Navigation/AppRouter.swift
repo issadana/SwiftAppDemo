@@ -7,6 +7,8 @@
 import Foundation
 import Observation
 
+// `@Observable` — Changing `selectedTab` or any `...Path` array notifies SwiftUI readers (e.g. `TabView`, `NavigationStack` bindings).
+// `@MainActor` — Navigation state is manipulated alongside UI; keeps mutations thread-safe with SwiftUI.
 @Observable
 @MainActor
 final class AppRouter {

@@ -9,6 +9,7 @@ import SwiftUI
 // Toolbar or row control: toggles membership in `FavoritesViewModel.favoriteIDs`.
 struct FavoriteButton: View {
     let filmID: String
+    // `@Environment` — Pulls the favorites VM injected at `RootCoordinator`; no prop-drilling through every parent initializer.
     @Environment(FavoritesViewModel.self) private var favoritesViewModel
 
     var isFavorite: Bool {

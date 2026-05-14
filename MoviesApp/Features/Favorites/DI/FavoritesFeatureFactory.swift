@@ -7,6 +7,7 @@
 import Foundation
 
 /// Builds favorites UI state; depends on catalog APIs to resolve full `Film` models.
+/// `@MainActor` — Same rationale as `FilmCatalogFeatureFactory`: produces main-actor ViewModels from composition-time wiring.
 @MainActor
 struct FavoritesFeatureFactory {
     private let favoritesRepository: FavoritesRepository

@@ -8,10 +8,12 @@ import Foundation
 import Observation
 
 // Screen model for the main catalog list: one fetch, cancellable if the view leaves.
+// `@Observable` — SwiftUI views automatically refresh when `state` (or other stored properties) changes.
+// `@MainActor` — All mutations align with UI updates; async tasks hop back to main actor via VM isolation.
 @Observable
 @MainActor
 final class FilmsViewModel {
-    // Published to `FilmsScreen` for switch-based UI (empty, loading, list, error).
+    // `private(set)` — External readers see loading UI state; only this class assigns new enum cases.
     private(set) var state: ViewState<[Film]> = .idle
 
     private let fetchFilmsUseCase: FetchFilmsUseCaseProtocol
@@ -69,6 +71,7 @@ final class FilmsViewModel {
         fetchTask?.cancel()
     }
 
+    // `@MainActor` — Matches class isolation so this factory can construct/configure the mock on the same executor.
     @MainActor
     static var mock: FilmsViewModel {
         Logger.debug("Creating mock FilmsViewModel", category: "FilmsViewModel")

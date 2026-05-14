@@ -7,9 +7,9 @@
 import SwiftUI
 
 // Push destination for `Route.filmDetail`: banner, metadata grid, description, characters.
+// Toolbar `FavoriteButton` reads `FavoritesViewModel` from the environment injected on `RootCoordinator`’s `TabView`.
 struct FilmDetailScreen: View {
     let viewModel: FilmDetailViewModel
-    @Environment(FavoritesViewModel.self) private var favoritesViewModel
 
     var body: some View {
         ScrollView {
@@ -49,6 +49,7 @@ struct FilmDetailScreen: View {
         .toolbar {
             FavoriteButton(filmID: viewModel.film.id)
         }
+        // `.task(id:)` — Fetch runs once per film; changing pushed film resets and reloads people.
         .task(id: viewModel.film.id) { await viewModel.onAppear() }
         .onDisappear { viewModel.cancelFetch() }
     }

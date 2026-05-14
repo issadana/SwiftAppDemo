@@ -12,6 +12,7 @@ struct FilmListView: View {
 
     var body: some View {
         List(films) { film in
+            // `NavigationLink(value:)` — Pushes by appending `CatalogRoute` to the stack bound in `RootCoordinator` (typed navigation, not string routes).
             NavigationLink(value: CatalogRoute.filmDetail(film)) {
                 FilmRow(film: film)
             }

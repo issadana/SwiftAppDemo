@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct SettingsScreen: View {
+    // `@AppStorage` — Property wrapper backed by `UserDefaults`; survives launches and publishes changes to SwiftUI like `@State`.
     @AppStorage(UserDefaultsKeys.appearanceTheme)
     private var appearanceTheme: AppearanceTheme = .system
 
@@ -23,6 +24,7 @@ struct SettingsScreen: View {
         NavigationStack {
             Form {
                 Section {
+                    // `$appearanceTheme` — Projects an `@AppStorage`/`@State`/`@Binding` property into a `Binding` for controls (`Picker`, `Toggle`, etc.).
                     Picker("Appearance", selection: $appearanceTheme) {
                         ForEach(AppearanceTheme.allCases) {
                             Text($0.rawValue.capitalized)

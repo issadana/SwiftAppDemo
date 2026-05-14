@@ -8,10 +8,12 @@ import Foundation
 import Observation
 
 // Debounced search over the catalog (client-side filter via repository in current implementation).
+// `@Observable` — `SearchScreen` uses `Bindable(viewModel)` which requires observable writable properties like `searchText`.
+// `@MainActor` — Matches SwiftUI search field bindings and result rendering isolation.
 @Observable
 @MainActor
 final class SearchFilmsViewModel {
-    // Bound from `.searchable`; changes retrigger `.task(id:)` in `SearchScreen`.
+    // Writable — `.searchable(text:)` needs a two-way `Binding<String>` (see `Bindable` in `SearchScreen`).
     var searchText: String = ""
     private(set) var state: ViewState<[Film]> = .idle
 

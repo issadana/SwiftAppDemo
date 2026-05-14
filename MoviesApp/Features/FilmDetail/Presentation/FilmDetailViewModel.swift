@@ -8,6 +8,8 @@ import Foundation
 import Observation
 
 // Detail screen state: immutable `Film` plus async-loaded related `Person` rows.
+// `@Observable` — `FilmDetailScreen` switches on `state` without manual `objectWillChange`.
+// `@MainActor` — Keeps person-fetch results applied where SwiftUI expects thread-safe updates.
 @Observable
 @MainActor
 final class FilmDetailViewModel {
